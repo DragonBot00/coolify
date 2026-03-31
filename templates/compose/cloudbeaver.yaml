@@ -12,6 +12,7 @@ services:
       - cloudbeaver-data:/opt/cloudbeaver/workspace
     environment:
       - SERVICE_URL_CLOUDBEAVER_8978
+      - CB_SERVER_POLICY_RESOURCE_MANAGER_ENABLED=${CB_SERVER_POLICY_RESOURCE_MANAGER_ENABLED:-true}
     healthcheck:
       test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8978/"]
       interval: 5s
